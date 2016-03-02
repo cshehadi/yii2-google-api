@@ -1,0 +1,28 @@
+{
+    "name": "gillbeits/yii2-google-api",
+    "description": "Google Api for Yii2 as Component",
+    "require": {
+        "php": ">=5.4.0",
+        "google/apiclient": "^2.0.0@RC"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ivan Koretskiy",
+            "email": "gillbeits@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Yii2GoogleApi\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require-dev": {
+        "yiisoft/yii2": "^2.0",
+        "yiisoft/yii2-bootstrap": "^2.0"
+    },
+    "suggest": {
+        "yiisoft/yii2-bootstrap": "Allow use widgets"
+    }
+}
