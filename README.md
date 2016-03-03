@@ -60,3 +60,23 @@ $data = \Yii::$app->{'google-api'}
 
 ```
 
+Widgets
+-------
+
+For usage widgets in Yii2 install yiisoft/yii2-bootstrap library:
+
+```php
+php composer.phar require yiisoft/yii2-bootstrap
+```
+
+* Google Analytics widget usage
+    ```php
+    <?= gillbeits\Yii2GoogleApi\Widgets\AnalyticsGAData::widget([
+        'viewId' => <AnalyticsViewID>,
+        'startDate' => '2015-01-01',
+        'endDate' => 'today',
+        'metrics' => 'ga:sessions',
+        'dimensions' => 'ga:userGender',
+        'templateFile' => '//analytics/widgets/AnalyticsGenderGA'
+    ])?>
+    ```
