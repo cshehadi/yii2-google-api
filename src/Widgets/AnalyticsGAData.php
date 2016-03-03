@@ -6,7 +6,7 @@
  * Time: 14:02
  */
 
-namespace Yii2GoogleApi\Widgets;
+namespace gillbeits\Yii2GoogleApi\Widgets;
 
 
 class AnalyticsGAData extends GoogleApiWidget

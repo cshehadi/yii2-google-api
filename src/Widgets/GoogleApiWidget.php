@@ -6,10 +6,10 @@
  * Time: 14:03
  */
 
-namespace Yii2GoogleApi\Widgets;
+namespace gillbeits\Yii2GoogleApi\Widgets;
 
 
-use Yii2GoogleApi\GoogleApi;
+use gillbeits\Yii2GoogleApi\GoogleApi;
 use yii\bootstrap\Widget;
 
 class GoogleApiWidget extends Widget

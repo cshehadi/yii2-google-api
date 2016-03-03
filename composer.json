@@ -1,6 +1,6 @@
 {
     "name": "gillbeits/yii2-google-api",
-    "description": "Google Api for Yii2 as Component",
+    "description": "Google Api Component for Yii2",
     "require": {
         "php": ">=5.4.0",
         "google/apiclient": "^2.0.0@RC"
@@ -14,7 +14,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Yii2GoogleApi\\": "src/"
+            "gillbeits\\Yii2GoogleApi\\": "src/"
         }
     },
     "minimum-stability": "dev",

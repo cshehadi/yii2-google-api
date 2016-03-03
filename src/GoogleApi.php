@@ -6,7 +6,7 @@
  * Time: 16:54
  */
 
-namespace Yii2GoogleApi;
+namespace gillbeits\Yii2GoogleApi;
 
 
 use yii\base\Component;
@@ -35,12 +35,12 @@ class GoogleApi extends Component
     public function init()
     {
         if (!isset($this->credentials)) {
-            throw new InvalidConfigException("Не указан файл с данными для авторизации");
+            throw new InvalidConfigException("Not set credentials file");
         }
 
         $this->credentials = \Yii::getAlias($this->credentials);
         if (!file_exists($this->credentials)) {
-            throw new InvalidConfigException("Файл {$this->credentials} не найден");
+            throw new InvalidConfigException("File {$this->credentials} not exists");
         }
     }
 
@@ -54,12 +54,12 @@ class GoogleApi extends Component
 
             foreach ($this->services as $serviceName => $service) {
                 if (!isset($service['class'])) {
-                    throw new InvalidConfigException("Не указан класс сервиса {$serviceName}");
+                    throw new InvalidConfigException("Not set service class for service \"{$serviceName}\"");
                 }
 
                 $service['scopes'] = (array)$service['scopes'];
                 if (empty($service['scopes'])) {
-                    throw new InvalidConfigException("Не указан область доступа сервиса {$serviceName}");
+                    throw new InvalidConfigException("Not set scopes for service \"{$serviceName}\"");
                 }
 
                 $this->client->addScope($service["scopes"]);
@@ -68,7 +68,7 @@ class GoogleApi extends Component
             $scopes = $this->client->getScopes();
 
             if (empty($scopes)) {
-                throw new InvalidConfigException("Не указаны области доступа для приложения {$this->name}");
+                throw new InvalidConfigException("Not set scopes for application \"{$this->name}\"");
             }
         }
 
