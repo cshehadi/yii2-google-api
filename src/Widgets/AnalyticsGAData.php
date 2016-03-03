@@ -34,13 +34,16 @@ class AnalyticsGAData extends GoogleApiWidget
     public function run()
     {
         try {
-            $ga_data = $this->getGoogleApi()->analytics->data_ga->get("ga:" . $this->viewId, $this->startDate->format("Y-m-d"), $this->endDate->format("Y-m-d"), $this->metrics, [
+            $analytics = $this->getService('\Google_Service_Analytics');
+            $ga_data = $analytics->data_ga->get("ga:" . $this->viewId, $this->startDate->format("Y-m-d"), $this->endDate->format("Y-m-d"), $this->metrics, [
                 'dimensions' => $this->dimensions
             ]);
+
             echo $this->render($this->templateFile, [
                 'ga_data' => $ga_data,
                 'widgetId' => $this->widgetId
             ]);
+
         } catch (\Exception $e) {
             \Yii::$app->getSession()->setFlash('error', $e->getMessage());
         }
