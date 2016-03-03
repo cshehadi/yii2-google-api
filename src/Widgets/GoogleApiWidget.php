@@ -15,11 +15,11 @@ use yii\bootstrap\Widget;
 
 class GoogleApiWidget extends Widget
 {
-    protected $widgetId;
+    public static $autoIdPrefix = 'wid-id-';
 
     public function __construct(array $config = [])
     {
-        $this->widgetId = "wid-id-" . crc32(serialize($config));
+        $this->setId(static::$autoIdPrefix . crc32(serialize($config)));
         parent::__construct($config);
     }
 
@@ -46,7 +46,7 @@ class GoogleApiWidget extends Widget
             }
         }
 
-        if (empty($analytics) || !is_subclass_of($analytics, $serviceClass)) {
+        if (empty($serviceInstance) || !is_a($serviceInstance, $serviceClass)) {
             throw new InvalidConfigException("No config for {$serviceClass} service");
         }
 

@@ -40,8 +40,7 @@ class AnalyticsGAData extends GoogleApiWidget
             ]);
 
             echo $this->render($this->templateFile, [
-                'ga_data' => $ga_data,
-                'widgetId' => $this->widgetId
+                'ga_data' => $ga_data
             ]);
 
         } catch (\Exception $e) {
