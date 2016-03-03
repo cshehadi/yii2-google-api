@@ -70,6 +70,7 @@ php composer.phar require yiisoft/yii2-bootstrap
 ```
 
 * Google Analytics widget usage
+
     ```php
     <?= gillbeits\Yii2GoogleApi\Widgets\AnalyticsGAData::widget([
         'viewId' => <AnalyticsViewID>,
