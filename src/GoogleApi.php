@@ -85,7 +85,7 @@ class GoogleApi extends Component
             return parent::__get($name);
         }
 
-        if (null === $this->serviceInstances[$name]) {
+        if (!isset($this->serviceInstances) || null === $this->serviceInstances[$name]) {
             /** @var \Google_Service $serviceClass */
             $serviceClass = $this->services[$name]["class"];
             $this->serviceInstances[$name] = new $serviceClass($this->getClient());
